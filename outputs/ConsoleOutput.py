@@ -14,7 +14,7 @@ class ConsoleOutput(PluginLoader.Plugin):
         sys.stdout.write('Operating mode: {0}\n'.format(msg.mode))
 
         sys.stdout.write('E Today : {0:>5}   Total: {1:<5}\n'.format(msg.e_today, ((((msg.e_today*10)-(int(msg.e_today*10)))/10)+msg.e_total)))
-        sys.stdout.write('H Total : {0:>5}   Temp : module: {1:<5} inner: {1:<5} \n'.format(msg.h_total, msg.module_temp, msg.inner_temp()))
+        sys.stdout.write('H Total : {0:>5}   Temp : module: {1:<5} inner: {2:<5} \n'.format(msg.h_total, msg.module_temp, msg.inner_temp))
         sys.stdout.write('P active: {0:>5}   react: {1:<5}\n'.format(msg.output_active_power, msg.output_reactive_power))
 
         sys.stdout.write('PV1   V: {0:>5}   I: {1:>4}  P: {2:>4}\n'.format(msg.v_pv(1), msg.i_pv(1), msg.p_pv(1)))

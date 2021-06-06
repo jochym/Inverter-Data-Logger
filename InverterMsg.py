@@ -35,8 +35,8 @@ offset = {
 23: 47, #Total generation hi Unit:1 hour
 24: 49, #Total generation low
 25: 51, #Today production Unit:0.01kWh
-26: 53, #Today generation time
-        #Inverter inner message Unit:1 Minute
+26: 53, #Today generation time Unit:1 Minute
+        #Inverter inner message 
 27: 55, #Inverter module temperature
 28: 57, #Inverter inner temperature
 29: 59, #Inverter Bus voltage Unit:0.1V
@@ -197,6 +197,7 @@ class InverterMsg(object):
     def output_active_power(self):
         """Output active power  kW"""
         return self.__get_short(offset[12], 100)  # Divide by 100
+
     @property
     def output_reactive_power(self):
         """Output reactive power kVar"""
@@ -220,10 +221,10 @@ class InverterMsg(object):
 
     @property
     def module_temp(self):
-        """Temperature recorded by the inverter."""
+        """Temperature recorded by the module."""
         return self.__get_short(offset[27], 1)
 
-
+    @property
     def inner_temp(self):
         """Temperature recorded by the inverter."""
         return self.__get_short(offset[28], 1)
